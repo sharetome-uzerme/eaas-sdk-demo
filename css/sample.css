@@ -1,0 +1,22 @@
+html,body {
+	height: 100%;
+	width: 100%;
+}
+
+.container-fluid {
+	height: 100%;
+	background-color: aliceblue;
+}
+
+.form-title{
+	margin-bottom: 15px;
+	text-align: center;
+	width: 400px;
+	color:#004e92;
+	font-size: 32px;
+	font-weight: 300;
+}
+.form-card{
+	width: 420px;
+	border: 1px solid #dfe7ef;
+}
