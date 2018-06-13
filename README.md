@@ -15,7 +15,7 @@
 # 获得 SDK
 > 1. 通过官网下载, 地址: http://www.sharetome.com/eaas-sdk-demo.zip
 > 2. 通过添加EaaS SDK二次开发群文件获取,QQ群:257411520 ;
-> 3. 通过Github获取, 地址: https://github.com/haibin05/eaas-sdk-demo.git
+> 3. 通过Github获取, 地址: https://github.com/sharetome-uzerme/eaas-sdk-demo.git
 > 4. 通过码云获取, 地址: https://gitee.com/sharetome/eaas-sdk-demo.git
 
 # 使用 EaaS SDK
