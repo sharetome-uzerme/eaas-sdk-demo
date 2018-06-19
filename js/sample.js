@@ -23,7 +23,11 @@ $(function () {
   $('#btn-start').click(function () {
     var appId = 'APP00001';  // 要打开的应用ID（EaaS 分配的APP）
     var userId = 'eaas-sdk'; // 自己系统中的用户ID
-	var dfsMode = false;     // DFS 模式
+    var dfsMode = false;  // DFS 模式
+
+    var fileId = $('#fileid').val();
+    var fileName = $('#fileName').val();
+    var readonly = $('#filereadonly').is(':checked');
 
     var qs = {
       appId: appId,
@@ -31,12 +35,21 @@ $(function () {
 	  userId: userId
     };
 
+    if (fileId) {
+      url = __OPEN_FILE_URL;
+      qs.dfsMode = dfsMode;
+      qs.fileId = fileId;
+      qs.readOnly = readonly;
+      qs.fileName = fileName;    
+    }
+	
     $.ajax({
       type: "POST",
       url: __OPEN_APP_URL,
       dataType: 'json',
       data: JSON.stringify(qs),
       headers: {
+        "Authorization": 'Bearer ' + __EAAS_FAKE_INFO.userToken,
         "content-type": 'application/json'
       }
     }).done(function (json) {
