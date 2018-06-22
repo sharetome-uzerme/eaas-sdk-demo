@@ -35,6 +35,7 @@ $(function () {
 	  userId: userId
     };
 
+	var url = __OPEN_APP_URL;
     if (fileId) {
       url = __OPEN_FILE_URL;
       qs.dfsMode = dfsMode;
@@ -45,7 +46,7 @@ $(function () {
 	
     $.ajax({
       type: "POST",
-      url: __OPEN_APP_URL,
+      url: url,
       dataType: 'json',
       data: JSON.stringify(qs),
       headers: {
@@ -59,7 +60,7 @@ $(function () {
 		// 数据格式固定， EaaS必须参数
         var params = JSON.stringify({
           "isParticipantMode": false,
-          "readOnly": info.sessionId,
+          "readOnly": info.readOnly,
           "sessionId": info.sessionId,
           "correlatedSessionId": info.correlatedSessionId,
           "gwHost": info.gwHost,
@@ -72,6 +73,8 @@ $(function () {
           "userNickname": __EAAS_FAKE_INFO.userNickname,
           "userToken": __EAAS_FAKE_INFO.userToken
         });
+
+        console.log('>>>>>>>>>>', params);
 
         var code = (Base64.encode(params) + "").replace(/\//g, '_');  // 将服务器返回的数据通过Base64进行编码，作为参数传递给EaaS服务器
         var eaas = __EAAS_HOST + '/eaas/workspace/' + code;    // 组装打开在线应用访问地址，访问EaaS服务器
