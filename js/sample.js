@@ -22,7 +22,7 @@ $(function () {
   */
   $('#btn-start').click(function () {
     var appId = 'APP00001';  // 要打开的应用ID（EaaS 分配的APP）
-    var userId = 'eaas-sdk'; // 自己系统中的用户ID
+    var userId = '0'; // 自己系统中的用户ID
     var dfsMode = false;  // DFS 模式
 
     var fileId = $('#fileid').val();
